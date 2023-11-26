@@ -1,16 +1,4 @@
-import pandas as pd
-from sklearn.tree import DecisionTreeClassifier, export_text
 
-data = pd.read_csv("/content/drive/MyDrive/Datasets/ML/playTennis.csv")
-X = data.drop('answer', axis=1)
-y = data['answer']
-
-clf = DecisionTreeClassifier()
-clf.fit(X, y)
-
-print(export_text(clf))
-new = {"outlook": "sunny", "temperature": "hot", "humidity": "normal", "wind": "strong"}
-print("Predicted Label for new example", new, "is:", clf.predict([new])[0])
 from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier, export_text
 
